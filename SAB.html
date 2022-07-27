@@ -1,0 +1,58 @@
+<?php
+	include_once 'http://localhost/test.php';
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function preventback() {window.history.forward() ;}
+setTimeout("preventback()", 0);
+window.onunload=function() {null};
+</script>
+
+<script>
+function lettersOnly(input){
+	var regex = /[^a-z ]/gi;
+	input.value = input.value.replace(regex, "");
+}
+</script>
+      
+    <title>Schreiner SAB</title>
+    <link rel="stylesheet" type="text/css" href="SAB_colors.css" />
+</head>
+
+<body>
+
+    <div id= "menu-text">
+
+        <h5><a href="#">Request Information</a></h5>
+
+</div>
+    <a href="#">
+        <img src="Schreiner_University.jpg" >   
+    </a>
+
+    <form action="http://localhost/test.php" method="post">
+	
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Email"><br>
+
+        <br><label for="fullname">Fullname:</label>
+        <input type="text"  name="fullname" placeholder="Fullname" onkeyup="lettersOnly(this)"><br>
+
+        <br><button>submit</button>
+
+	<?php$conn?>
+	
+    </form>
+
+    <a href="#">
+        <img src="campus.png"> <center>
+
+    </a>
+
+    </body>
+</html>
+
